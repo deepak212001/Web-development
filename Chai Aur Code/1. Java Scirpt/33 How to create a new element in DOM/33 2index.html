@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: white;">
+    
+</body>
+<script>
+    const div=document.createElement('div')
+    console.log(div)  //<div></div>
+    //add class and id
+    div.className="main"
+    div.id="myid"
+    //<div class="main" id="myid"></div>
+    div.id= Math.round(Math.random()*10+1)
+    //<div class="main" id="3"></div>
+    div.setAttribute("title", "chai aur code")
+    div.style.backgroundColor="green"
+    // <div class="main" id="10" title="chai aur code" style="background-color: green;"></div>
+    // ye abhi page pe show nhi kar rha kyuki kuchh attach nhi kiya hai 
+    div.innerHTML="hey i am deepak"
+    // <div class="main" id="6" title="chai aur code" style="background-color: green;">hey i am deepak</div>
+    const addText=document.createTextNode("hey i am deep")
+    div.appendChild(addText)
+    /*
+    <div class="main" id="7" title="chai aur code" style="background-color: green;">hey i am deepakhey i am deep</div>
+    */
+
+   // attach 
+   document.body.appendChild(div)
+</script>
+</html>

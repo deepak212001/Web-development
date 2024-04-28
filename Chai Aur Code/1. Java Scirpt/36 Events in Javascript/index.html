@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+    // // ab owl wli id pe click karege to alert aayega 
+    // // on click is a event 
+    // // onclick feature kam deta hai 
+    // //par ye bhi best way nhi hai kyuki hame eventlistner use karna chahiye kyuki sirf onclick me kuchh problm ho skti hai  bcz jyada information nhi milti hai 
+    // // addeventlistner hame sirf onclick hi nhi vo sath me propagation ki ability bhi dete hai ,propagation ki abhi kedhe ge 
+    // // aur img tag ke andr bhi likha skte hai onclick="alert("owl clicked")" par not a good way 
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     alert("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+    // default bhi false hi hota hai, true karege to bhi koi major differe nhi milega 
+
+
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+    // ye event padhna hai 
+   
+    // document.getElementById('images').addEventListener('click', function(e){
+    //   console.log("clicked inside the ul");
+    // }, false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    // }, false)
+    /*
+    false to bubbling means niche se upar 
+    pehle owl clicked fir clicked inside the ul hoga 
+    jab owl pe click karege to 
+    */
+    // document.getElementById('images').addEventListener('click', function(e){
+    //   console.log("clicked inside the ul");
+    // }, true)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    // }, true)
+    /* true to top se bottom capturing mode
+    pehle  clicked inside the ul fir owl clicked hoga
+    */
+    
+
+    // // ese rokne ke liye ki bubbling na hoye to   3img
+    // document.getElementById('images').addEventListener('click', function(e){
+    //   console.log("clicked inside the ul");
+    // }, false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation() // yaha pe hi stop ho jayga upar nhi jayega 
+    // }, false)
+
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault()
+    //     console.log("google clicked");
+    // }, false)
+    // // e.preventDefault() ye jab link pe click karege to use rok dega link par nhi jane dega  4img
+
+
+    // click on img and img was remove 5img an d6img
+    document.querySelector('#images').addEventListener('click', function (e) {
+        console.log(e.target.tagName); //IMG tag jis ke karna image show ho rhi hai 
+        if (e.target.tagName === 'IMG') {   // check hai ki img hi hai na kahi aur kuchh remove na ho jaye agr ye nhi hoga to li pe click karte to pura hi vo remove ho jata
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode // target img hai par hame li ko lena hai jo ki img ka parent hai 
+            // removeIt.remove()
+            //aur
+            removeIt.parentNode.removeChild(removeIt)
+        }
+    })
+
+</script>
+
+</html>

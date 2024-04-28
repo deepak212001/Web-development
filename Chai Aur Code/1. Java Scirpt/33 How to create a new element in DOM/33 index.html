@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black; color: white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // //queryselector sirf first ko select karta hai 
+    // //queryselectorAll sab ko select karta hai 
+    // console.log(parent)
+    // /*
+    // <div class="parent">
+    //     <div class="day">Monday</div>
+    //     <div class="day">Tuesday</div>
+    //     <div class="day">Wednesday</div>
+    //     <div class="day">Thursday</div>
+    // </div>
+    // */
+    // console.log(parent.children)
+    // /*
+    
+    // HTMLCollection(4) [div.day, div.day, div.day, div.day]
+    // <div class="day">Monday</div>
+    // <div class="day">Tuesday</div>
+    // <div class="day">Wednesday</div>
+    // <div class="day">Thursday</div>
+    // */
+    // console.log(parent.children[0])
+    // /*
+    // <div class="day">Monday</div>
+    // */
+    // console.log(parent.children[0].innerHTML)
+    // // Monday
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML)
+    // }
+    // /*
+    // Monday
+    // Tuesday
+    // Thursday
+    // Wednesday
+    // */
+//    parent.children[1].style.color="orange"
+//    console.log(parent.firstElementChild)    // <div class="day">Monday</div>
+//    console.log(parent.lastElementChild)    // <div class="day">Thursday</div>
+    const dayOne = document.querySelector('.day')
+    console.log(dayOne) // <div class="day">Monday</div>
+    console.log(dayOne.parentElement) 
+    /*
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    */
+    console.log(dayOne.nextElementSibling)  //<div class="day">Tuesday</div>
+    console.log("NODES: ", parent.childNodes)
+    /*
+    NODES:  NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+    
+    9 me se 4 to day aur line break hai vo bhi ek text node element hai diye hai text vo 5
+    comment karege to fir 1 increase hoga aur extra line break se bhi 
+    */
+
+   
+</script>
+</html>

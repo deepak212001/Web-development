@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+</body>
+<script>
+    //add new language
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        //    const l=document.querySelector('.language')
+        //    l.appendChild(li)
+        //aur
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typescript")
+    addLanguage("c++")
+    // addLnaguage function Optimize nhi hai kyuki es function me pura tree travesal karna pad rha hai
+    function addOptiLanguage(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(`${langName}`))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    //appendchild is better than innerHTML
+    addOptiLanguage('c')
+    addOptiLanguage('java')
+
+    //Edit 
+    const secondlang = document.querySelector("li:nth-child(2)") // 2nd ka pura li select ho gya hai 
+    //secondlan.innerHTML="mojo"    // ye optimized nhi hai 
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondlang.replaceWith(newli)
+
+    const firstlang = document.querySelector("li:first-child") //1ft ka pura li select ho gya hai 
+    const newl = document.createElement('li')
+    newl.textContent = "Bhai lang"
+    firstlang.replaceWith(newl)
+
+    const lastlang = document.querySelector("li:last-child") 
+    lastlang.innerHTML='Rust'
+
+    // remove
+    const last=document.querySelector("li:last-child")
+    last.remove()
+</script>
+
+</html>
