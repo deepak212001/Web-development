@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Start should change the Background color every second</h3>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const body = document.querySelector("body")
+    const start = document.querySelector('#start')
+    const stop = document.querySelector('#stop')
+
+    const randomcolor = function () {
+        const hex = "0123456789ABCDEF"
+        let color = "#"
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * 16)]
+        }
+        return color
+    }
+    let intervalId
+    console.log(randomcolor())
+    const startChangingColor = function () {
+        if(!intervalId){
+            intervalId=setInterval(changeBGC,1000)
+        } //intervalId null hai to to hi ye karo
+        function changeBGC(){
+            document.body.style.backgroundColor = randomcolor()
+        }
+    }
+
+    const stopChangingColor = function () {
+        clearInterval(intervalId)
+        intervalId=null  //es se stop pe hold hoga nhi to chalta rhta 
+    }
+    // agr ye null na karte aur upar vo if se check nhi karte to kya hota ki stop ke bad fir start karte to fir se ye intervalId chalta aur speed double hoti 
+    // to ab stop karege to null ho jayega aur start kare fir to bs ek bar hi chalega 
+    start.addEventListener('click', startChangingColor)
+    stop.addEventListener('click', stopChangingColor)
+
+</script>
+
+</html>

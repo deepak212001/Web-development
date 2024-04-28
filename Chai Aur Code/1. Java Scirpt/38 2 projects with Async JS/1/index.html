@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai Aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){
+    //     console.log("deepak")
+    // },2000) // to ab ye deepak 2 sec bad print hoga 
+    // means 2 sec bar ye function run hoga 
+    // setInterval jo hai vo bhi same hai par vo x sec ke bad  fir  function ko execution karega 
+
+    //aur
+    // const say=function(){
+    //     console.log("deepak")
+    // }
+    // setTimeout(say,2000)
+
+    const changeText=function(){
+        document.querySelector('h1').innerHTML="deepak yadav is good boy"
+    }
+    const changeme=setTimeout(changeText, 2000) //img 1 2
+
+    //stop settimeout
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeme)// to ye refernce mil rha hai ki changeme wale ko ruko 
+        console.log("STOPPED")
+        // par ye 2 sec se pehle stop pe click kiya to ye function chlega aur rokega 
+    })
+</script>
+</html>

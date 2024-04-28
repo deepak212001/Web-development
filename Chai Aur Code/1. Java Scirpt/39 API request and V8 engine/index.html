@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #f3f0f0;">
+    
+</body>
+<script>
+   //  XMLHttpRequest() ->class hai  object  bnana hai  to aage new
+   const requestURL='https://api.github.com/users/hiteshchoudhary'
+   const xhr = new XMLHttpRequest()
+   // open(method,url ) method ->get or post 
+   // xhr.open('GET','https://api.github.com/users/hiteshchodhary')
+   //aur
+   xhr.open('GET',requestURL) //open apne aap me call nhi hota ab ese call karna padegaa
+   xhr.onreadystatechange = function(){
+       console.log(xhr.readyState);
+       if(xhr.readyState ===4){
+        //  console.log(this.responseText)//ths pta rha ahi ki es function ya object  ke liye chahiye bs
+        //  sara data aa gya 
+        // const data =this.responseText //data ka type string hai aur most of time string me h aata hai 
+        // console.log(data.follower)  // not valid bcz data ka type string hai 
+        // to convert karna hai  string se json me
+        const data =JSON.parse(this.responseText)
+        console.log(data.followers)
+       }
+    }
+
+    //readystate change ho to ye function exected hoga 
+    xhr.send()
+    // XMLHttp  ka concept tha fetch ka aage 
+   
+</script>
+</html>

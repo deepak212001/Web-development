@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai Aur JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // const sayDate=function(name){
+    //     console.log(`${name}`,Date.now())
+    //     //console.log(name,Date.now())
+    // }
+    // const intervalId=setInterval(sayDate,1000,"deepak") //1 img
+    // clearInterval(intervalId)
+    
+
+    // start pe click kare to console loge se print ho console me aur stop kare to na ho 
+
+    // const start=document.querySelector('#start')
+    // const stop=document.querySelector('#stop')
+    // start.addEventListener('click',function(e){
+    //     const say=function(name){
+    //         console.log(`${name}`,Date.now())
+    //     }
+    //     const intervalId=setInterval(say,1000,"deepak")
+    //     stop.addEventListener('click',function(){
+    //         clearInterval(intervalId)
+    //     })
+    // })
+    //aur
+
+    const start=document.querySelector('#start')
+    const stop=document.querySelector('#stop')
+        
+        const intervalId=function(){
+            const say=function(name){
+            console.log(`${name}`,Date.now())
+            }
+            setInterval(say,1000,"deepak")
+        }
+        const Stopid=function(){
+            clearInterval(intervalId)
+        }
+    stop.addEventListener('click',Stopid)
+    start.addEventListener('click',intervalId)
+</script>
+</html>
