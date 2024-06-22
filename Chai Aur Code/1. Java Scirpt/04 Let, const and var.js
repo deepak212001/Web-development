@@ -7,7 +7,7 @@ accCity="jaipur"
 //const me change nhi kar skte hai 
 
 // console.log(`${accID} ${accemail} ${accPassword} ${accCity} `)
-
+// 164 deepak@google.com 123 jaipur 
 
 // console.table([accID, accemail, accPassword, accCity])
 // ┌─────────┬─────────────────────┐
