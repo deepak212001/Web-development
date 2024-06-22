@@ -9,6 +9,11 @@
 // console.log(typeof valueInNumber)
 
 
+// let a="33bc"
+// let b = Number(a) 
+// console.log(typeof b)  // number
+// console.log(b)   //Nan - Not a Number bcz abc is not a number
+
 // let a="abc"
 // let b = Number(a) 
 // console.log(typeof b)  // number
