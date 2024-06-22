@@ -19,7 +19,23 @@
 // // console.log(aname)  //Sankar
 // // subbstring me -ve value denge to vo 0 se start hota hai 
 
+let name="depakyadav";
+let aname=name.slice(-8,6);
+console.log(aname); //paky
+/*
 
+d->0,-10
+e->1,-9
+p->2,-8
+a->3,-7
+k->4,-6
+y->5,-5
+a->6,-4
+d->7,-3
+a->8,-2
+v->9,-1
+
+*/
 
 const  newStringOne= "   deepak     "   // when use give extra space 
 console.log(newStringOne)
