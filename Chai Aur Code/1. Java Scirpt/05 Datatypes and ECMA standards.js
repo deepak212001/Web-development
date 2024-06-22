@@ -1,3 +1,7 @@
+"use strict"; // treat all JS code as newer version
+// vaise bhi now day js automactive new standard se hi chalta hai 
+
+
 //-----DATA TYPE-----
 
 // "use strict"; // treatall JS code as newer version
@@ -7,11 +11,11 @@
 // string 
 // Boolean
 // null-> standalone value
-// undefined 
+// undefined -> jab value assgin nhi ki
 // symbol -> unique (mostly use in reactJS)
 
-// oject
+// object
 
-console.log(typeof 3)
-console.log(typeof undefined)
-console.log(typeof null)
+console.log(typeof 3)   //number
+console.log(typeof undefined)   //undefined
+console.log(typeof null) //object
